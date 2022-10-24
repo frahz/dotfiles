@@ -19,7 +19,7 @@ packer.init({
   package_root = packer_util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
 })
 
-return packer.startup(function()
+return packer.startup(function(use)
     -- Package Manager
     use("wbthomason/packer.nvim")
 
@@ -31,6 +31,17 @@ return packer.startup(function()
     use("hrsh7th/cmp-omni")
 
     -- Config for nvim LSP
-    use("neovim/nvim-lspconfig") 
+    use("neovim/nvim-lspconfig")
 
+    -- Treesitter/Syntax Higlighting
+    use {
+        "nvim-treesitter/nvim-treesitter",
+        run = ":TSUpdate",
+    }
+
+    -- Theme
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin",
+   }
 end)
