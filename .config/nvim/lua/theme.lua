@@ -19,6 +19,17 @@ catppuccin.setup({
     integrations = {
         treesitter = true,
         cmp = true,
-    }
+    },
+    custom_highlights = function()
+        return {
+            ["@parameter"] = { style = {} },
+            ["@namespace"] = { style = {} },
+            ["@text.emphasis"] = { style = {} },
+            ["@text.literal"] = { style = {} },
+            ["@text.uri"] = { style =  { "underline" } },
+            ["@tag.attribute"] = { style = {} },
+        }
+    end
 })
+
 vim.api.nvim_command("colorscheme catppuccin")
