@@ -19,6 +19,15 @@ catppuccin.setup({
     integrations = {
         treesitter = true,
         cmp = true,
+        native_lsp = {
+            enabled = true,
+            virtual_text = {
+                errors = {},
+                hints = {},
+                warnings = {},
+                information = {},
+            },
+        },
     },
     custom_highlights = function()
         return {
