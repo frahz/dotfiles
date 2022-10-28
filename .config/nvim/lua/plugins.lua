@@ -29,6 +29,7 @@ return packer.startup(function(use)
     use("hrsh7th/cmp-path")
     use("hrsh7th/cmp-buffer")
     use("hrsh7th/cmp-omni")
+    use("saadparwaiz1/cmp_luasnip")
 
     -- Config for nvim LSP
     use("neovim/nvim-lspconfig")
@@ -39,8 +40,14 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
 
+    -- snippets
+    use("L3MON4D3/LuaSnip") --snippet engine
+    
     -- Better comment keybinds
     use("tpope/vim-commentary")
+
+    -- Autopairs, works with cmp engine
+    use("windwp/nvim-autopairs")
 
     -- Statusline stuff
     use("kyazdani42/nvim-web-devicons")
