@@ -39,6 +39,16 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
 
+    -- Better comment keybinds
+    use("tpope/vim-commentary")
+
+    -- Statusline stuff
+    use("kyazdani42/nvim-web-devicons")
+    use {
+        "nvim-lualine/lualine.nvim",
+        requires = { "kyazdani42/nvim-web-devicons", opt = true }
+    }
+
     -- Theme
     use {
         "catppuccin/nvim",

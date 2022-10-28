@@ -19,6 +19,7 @@ catppuccin.setup({
     integrations = {
         treesitter = true,
         cmp = true,
+        lualine = true,
         native_lsp = {
             enabled = true,
             virtual_text = {
