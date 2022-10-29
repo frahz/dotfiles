@@ -42,7 +42,11 @@ return packer.startup(function(use)
 
     -- snippets
     use("L3MON4D3/LuaSnip") --snippet engine
-    
+    use("rafamadriz/friendly-snippets") -- snippet library
+
+    -- Symbol Viewer
+    use("stevearc/aerial.nvim") 
+
     -- Better comment keybinds
     use("tpope/vim-commentary")
 
