@@ -6,9 +6,10 @@ configs.setup({
         "lua",
         "rust",
         "cpp",
+        "c"
     },
     highlight = {
         enable = true,
-        disable = { "c" },
+        -- disable = { "c" },
     }
 })

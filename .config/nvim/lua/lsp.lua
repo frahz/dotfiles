@@ -23,9 +23,11 @@ local on_attach = function(client)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
+
 
 nvim_lsp.rust_analyzer.setup({
     on_attach = on_attach,
@@ -69,4 +71,17 @@ nvim_lsp.sumneko_lua.setup({
     },
 })
 
-
+-- TODO: fix "error" where diagnostics virtual text doesn't show up unless I reload nvim
+nvim_lsp.clangd.setup({
+    on_attach = on_attach,
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--pch-storage=memory",
+        "--clang-tidy",
+        "--suggest-missing-includes",
+        "--all-scopes-completion",
+        "--pretty",
+    },
+    filetypes = { "c", "cpp", "cc" },
+})
