@@ -1,0 +1,17 @@
+#!/bin/bash
+
+dir=$(pwd)
+
+# --->tmux<---
+
+# get tpm (to download tmux plugins)
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
+# symlink tmux config
+
+ln -s $dir/tmux/.tmux.conf $HOME/.tmux.conf
+
+
+# --->zsh<---
+# TODO
+
