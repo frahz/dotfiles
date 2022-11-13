@@ -6,7 +6,9 @@ configs.setup({
         "lua",
         "rust",
         "cpp",
-        "c"
+        "c",
+        "bash",
+        "java"
     },
     highlight = {
         enable = true,
