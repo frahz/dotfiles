@@ -1,6 +1,6 @@
 
 local nvim_lsp = require("lspconfig")
-require("lsp_handlers").setup()
+require("frahz.lsp_handlers").setup()
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")

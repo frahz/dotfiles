@@ -40,12 +40,23 @@ return packer.startup(function(use)
         run = ":TSUpdate",
     }
 
+    -- Telescope
+    use("nvim-lua/plenary.nvim")
+    use({
+        "nvim-telescope/telescope.nvim",
+        requires = { "nvim-lua/plenary.nvim"}
+    })
+    use({
+        "nvim-telescope/telescope-fzf-native.nvim",
+        run = "make",
+    })
+
     -- snippets
     use("L3MON4D3/LuaSnip") --snippet engine
     use("rafamadriz/friendly-snippets") -- snippet library
 
     -- Symbol Viewer
-    use("stevearc/aerial.nvim") 
+    use("stevearc/aerial.nvim")
 
     -- Better comment keybinds
     use("tpope/vim-commentary")
