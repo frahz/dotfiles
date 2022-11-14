@@ -86,3 +86,11 @@ nvim_lsp.clangd.setup({
     },
     filetypes = { "c", "cpp", "cc" },
 })
+
+nvim_lsp.bashls.setup({
+    on_attach = on_attach,
+})
+nvim_lsp.pyright.setup({
+    on_attach = on_attach,
+})
+
