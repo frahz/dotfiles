@@ -10,6 +10,12 @@ end
 -- leader keymap
 vim.g.mapleader = " " -- space
 
+-- center line after jump
+map("n", "<C-u>", "<C-u>zz")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "n", "nzz")
+
+
 -- keybinds for moving a line up or down
 map("n", "<S-Up>", "<cmd>m-2<CR>")
 map("n", "<S-Down>", "<cmd>m+<CR>")
