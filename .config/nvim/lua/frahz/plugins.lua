@@ -5,6 +5,7 @@ local fn = vim.fn
 -- ensure that packer is installed
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
+    bootstrap = true
     execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
     execute 'packadd packer.nvim'
 end
@@ -39,6 +40,7 @@ return packer.startup(function(use)
         "nvim-treesitter/nvim-treesitter",
         run = function ()
             local ts_update = require("nvim-treesitter.install").update({with_sync = true})
+            ts_update()
         end,
     })
 
@@ -88,4 +90,9 @@ return packer.startup(function(use)
         "catppuccin/nvim",
         as = "catppuccin",
    })
+
+   if bootstrap then
+    require("packer").sync()
+   end
+
 end)
