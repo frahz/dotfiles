@@ -35,10 +35,10 @@ return packer.startup(function(use)
     use("neovim/nvim-lspconfig")
 
     -- Treesitter/Syntax Higlighting
-    use {
+    use({
         "nvim-treesitter/nvim-treesitter",
         run = ":TSUpdate",
-    }
+    })
 
     -- Telescope
     use("nvim-lua/plenary.nvim")
@@ -64,16 +64,23 @@ return packer.startup(function(use)
     -- Autopairs, works with cmp engine
     use("windwp/nvim-autopairs")
 
+    -- Detect indentation style
+    use({
+        "nmac427/guess-indent.nvim",
+        config = function ()
+            require("guess-indent").setup({})
+        end,
+    })
     -- Statusline stuff
     use("kyazdani42/nvim-web-devicons")
-    use {
+    use({
         "nvim-lualine/lualine.nvim",
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
-    }
+    })
 
     -- Theme
-    use {
+    use({
         "catppuccin/nvim",
         as = "catppuccin",
-   }
+   })
 end)
