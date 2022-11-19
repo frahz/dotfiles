@@ -1,7 +1,7 @@
+require("frahz.plugins")
 require("frahz.options")
 require("frahz.keys")
 require("frahz.theme")
-require("frahz.plugins")
 require("frahz.lsp")
 require("frahz.statusline")
 require("frahz.completion")
