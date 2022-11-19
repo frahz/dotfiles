@@ -37,7 +37,9 @@ return packer.startup(function(use)
     -- Treesitter/Syntax Higlighting
     use({
         "nvim-treesitter/nvim-treesitter",
-        run = ":TSUpdate",
+        run = function ()
+            local ts_update = require("nvim-treesitter.install").update({with_sync = true})
+        end,
     })
 
     -- Telescope
