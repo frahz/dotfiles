@@ -31,3 +31,5 @@ map("n", "<Leader>fs", "<cmd>Telescope grep_string<CR>")
 map("n", "<Leader>fo", "<cmd>Telescope oldfiles<CR>")
 map("n", "<Leader>fc", "<cmd>Telescope git_commits<CR>")
 map("n", "<Leader>fd", "<cmd>Telescope diagnostics<CR>")
+map("n", "<Leader>k", "<cmd>Telescope keymaps<CR>")
+
