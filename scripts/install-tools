@@ -1,0 +1,45 @@
+#!/bin/bash
+set -e
+
+# install nvm for node/npm
+echo "download: nvm"
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+echo "download: node/npm"
+nvm install node
+
+# install rust tools
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+cargo install ripgrep bat fd-find git-delta tokei
+
+# install language servers
+echo "download: language servers"
+
+npm i -g pyright bash-language-server
+
+echo "download: rust-analyzer"
+curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-x86_64-unknown-linux-gnu.gz | gunzip -c - > ~/.local/bin/rust-analyzer
+chmod +x $HOME/.local/bin/rust-analyzer
+
+mkdir -p $HOME/temp
+pushd $HOME/temp
+
+echo "download: sumneko-lua"
+wget https://github.com/sumneko/lua-language-server/releases/download/3.6.3/lua-language-server-3.6.3-linux-x64.tar.gz
+tar -xz lua-language-server-3.6.3-linux-x64.tar.gz -C lua-language-server
+rm lua-language-server-3.6.3-linux-x64.tar.gz
+ln -s $HOME/temp/lua-language-server/bin/lua-language-server $HOME/.local/bin
+
+echo "download: clangd"
+wget https://github.com/clangd/clangd/releases/download/15.0.3/clangd-linux-15.0.3.zip
+unzip clangd-linux-15.0.3.zip
+ln -s $HOME/temp/clangd_15.0.3/bin/clangd $HOME/.local/bin
+
+popd
+
+echo "download: completed"
