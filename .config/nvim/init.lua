@@ -1,3 +1,8 @@
+local ok, _ = pcall(require, "impatient")
+if not ok then
+    vim.notify("Warning: impatient.nvim not isntalled", vim .log.levels.WARN)
+end
+
 require("frahz.plugins")
 require("frahz.options")
 require("frahz.keys")

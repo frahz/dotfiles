@@ -2,6 +2,8 @@ local vim = vim
 local execute = vim.api.nvim_command
 local fn = vim.fn
 
+local bootstrap = false
+
 -- ensure that packer is installed
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
 if fn.empty(fn.glob(install_path)) > 0 then
@@ -17,10 +19,11 @@ local packer = require("packer")
 local packer_util = require("packer.util")
 
 packer.init({
-  package_root = packer_util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
+    package_root = packer_util.join_paths(vim.fn.stdpath('data'), 'site', 'pack')
 })
 
 return packer.startup(function(use)
+
     -- Package Manager
     use("wbthomason/packer.nvim")
 
@@ -89,10 +92,13 @@ return packer.startup(function(use)
     use({
         "catppuccin/nvim",
         as = "catppuccin",
-   })
+    })
 
-   if bootstrap then
-    require("packer").sync()
-   end
+    -- Improve startuptime
+    use("lewis6991/impatient.nvim")
+
+    if bootstrap then
+        require("packer").sync()
+    end
 
 end)
