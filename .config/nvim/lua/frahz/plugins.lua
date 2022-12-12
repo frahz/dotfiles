@@ -23,7 +23,6 @@ packer.init({
 })
 
 return packer.startup(function(use)
-
     -- Package Manager
     use("wbthomason/packer.nvim")
 
@@ -71,6 +70,18 @@ return packer.startup(function(use)
     -- Autopairs, works with cmp engine
     use("windwp/nvim-autopairs")
 
+    use({
+        "lukas-reineke/indent-blankline.nvim",
+        config = function ()
+            require("indent_blankline").setup({
+                char = "▏",
+                space_char_blankline = " ",
+                filetype_exclude = { "help", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
+                buftype_exclude = { "terminal" },
+                show_first_indent_level = false,
+            })
+        end,
+    })
     -- Detect indentation style
     use({
         "nmac427/guess-indent.nvim",

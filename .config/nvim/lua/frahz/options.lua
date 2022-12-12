@@ -19,3 +19,10 @@ opt.hlsearch = false
 
 -- [[ misc ]]
 opt.swapfile = false
+
+-- [[ indent ]]
+opt.list = true
+opt.listchars = {
+    lead = "⋅",
+    trail = "•",
+}
