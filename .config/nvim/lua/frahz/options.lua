@@ -24,5 +24,6 @@ opt.swapfile = false
 opt.list = true
 opt.listchars = {
     lead = "⋅",
+    tab = "│ ",
     trail = "•",
 }
