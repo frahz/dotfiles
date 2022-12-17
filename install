@@ -1,39 +1,42 @@
 #!/bin/bash
 set -e
 
+ERROR="\e[31m[ERROR]: \e[0m"
+INFO="\e[32m[INFO]: \e[0m"
+WARNING="\e[33m[WARNING]: \e[0m"
 
 dir=$(pwd)
 
-echo "Install tools"
+echo -e "${INFO}Install tools"
 source $dir/scripts/install-tools
 
 
-echo "Installing and setting up tmux, zsh, and neovim"
+echo -e "${INFO}Installing and setting up tmux, zsh, and neovim"
 
 # --->tmux<---
 
-echo "tmux: setup"
+echo -e "${INFO}tmux: setup"
 
 # get tpm (to download tmux plugins)
-echo "tmux: cloning tpm (if not already installed)"
+echo -e "${INFO}tmux: cloning tpm (if not already installed)"
 [ ! -d $HOME/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
 # symlink tmux config
-echo "tmux: symlink config file"
+echo -e "${INFO}tmux: symlink config file"
 ln -s $dir/tmux/.tmux.conf $HOME/.tmux.conf
 
 # --->zsh<---
 
-echo "zsh: setup"
+echo -e "${INFO}zsh: setup"
 
-echo "zsh: cloning ohmyzsh"
+echo -e "${INFO}zsh: cloning ohmyzsh"
 [ ! -d $HOME/.oh-my-zsh ] && git clone https://github.com/ohmyzsh/ohmyzsh.git $HOME/.oh-my-zsh
 
-echo "zsh: install zsh plugins"
+echo -e "${INFO}zsh: install zsh plugins"
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-echo "zsh: symlink zsh config files"
+echo -e "${INFO}zsh: symlink zsh config files"
 ln -s $dir/zsh/.zshrc $HOME/.zshrc
 ln -s $dir/zsh/alias.zsh ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/alias.zsh
 ln -s $dir/zsh/frahz.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/frahz.zsh-theme
@@ -41,9 +44,9 @@ ln -s $dir/zsh/frahz.zsh-theme ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/frahz.z
 
 # --->neovim<---
 
-echo "neovim: setup"
+echo -e "${INFO}neovim: setup"
 
-echo "neovim: install/build neovim"
+echo -e "${INFO}neovim: install/build neovim"
 
 pushd $HOME/temp
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
@@ -51,6 +54,6 @@ tar -xvzf nvim-linux64.tar.gz
 sudo ln -s $HOME/temp/nvim-linux64 /usr/bin/nvim
 popd
 
-echo "neovim: symlink config files"
+echo -e "${INFO}neovim: symlink config files"
 ln -s $dir/.config/nvim $HOME/.config/nvim
 
