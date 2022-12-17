@@ -15,12 +15,21 @@ map("n", "<C-u>", "<C-u>zz")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "n", "nzz")
 
-
 -- keybinds for moving a line up or down
 map("n", "<S-Up>", "<cmd>m-2<CR>")
 map("n", "<S-Down>", "<cmd>m+<CR>")
 map("i", "<S-Up>", "<Esc><cmd>m-2<CR>")
 map("i", "<S-Down>", "<Esc><cmd>m+<CR>")
+map("v", "<S-Up>", ":m '<-2<CR>gv=gv")
+map("v", "<S-Down>", ":m '>+1<CR>gv=gv")
+
+-- paste over something but still keep the same thing in the paste buffer
+map("x", "<Leader>p", "\"_dP")
+
+-- allows paste outside vim
+map("n", "<Leader>y", "\"+y")
+map("v", "<Leader>y", "\"+y")
+map("n", "<Leader>Y", "\"+Y")
 
 -- Telescope
 map("n", "<Leader>ff", "<cmd>Telescope find_files<CR>")
