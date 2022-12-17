@@ -36,6 +36,12 @@ return packer.startup(function(use)
 
     -- Config for nvim LSP
     use("neovim/nvim-lspconfig")
+    use({
+        "j-hui/fidget.nvim",
+        config = function ()
+            require("fidget").setup({})
+        end
+    })
 
     -- Treesitter/Syntax Higlighting
     use({
