@@ -82,7 +82,7 @@ return packer.startup(function(use)
             require("indent_blankline").setup({
                 char = "▏",
                 space_char_blankline = " ",
-                filetype_exclude = { "help", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
+                filetype_exclude = { "alpha", "help", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
                 buftype_exclude = { "terminal" },
                 show_first_indent_level = false,
             })
