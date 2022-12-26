@@ -105,6 +105,13 @@ return packer.startup(function(use)
     -- Greeter
     use("goolord/alpha-nvim")
 
+    use({
+        "ojroques/nvim-osc52",
+        config = function ()
+            require("osc52").setup({silent = true})
+        end
+    })
+
     -- Theme
     use({
         "catppuccin/nvim",
