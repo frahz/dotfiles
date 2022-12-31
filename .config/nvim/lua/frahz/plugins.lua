@@ -102,6 +102,9 @@ return packer.startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
 
+    -- Git support
+    use("lewis6991/gitsigns.nvim")
+
     -- Nicer looking netrw
     use({
         "prichrd/netrw.nvim",
