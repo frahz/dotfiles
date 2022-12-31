@@ -42,3 +42,9 @@ vim.g.clipboard = {
     copy = {["+"] = copy, ["*"] = copy},
     paste = {["+"] = paste, ["*"] = paste},
 }
+
+-- [[ netrw ]]
+vim.g.netrw_banner = 0
+vim.g.netrw_list_hide = ""
+vim.g.netrw_list_hide = vim.g.netrw_list_hide .. "^\\./" -- hide . directory
+vim.g.netrw_list_hide = vim.g.netrw_list_hide .. ","

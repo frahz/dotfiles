@@ -102,6 +102,14 @@ return packer.startup(function(use)
         requires = { "kyazdani42/nvim-web-devicons", opt = true }
     })
 
+    -- Nicer looking netrw
+    use({
+        "prichrd/netrw.nvim",
+        config = function ()
+            require("netrw").setup({})
+        end
+    })
+
     -- Greeter
     use("goolord/alpha-nvim")
 
