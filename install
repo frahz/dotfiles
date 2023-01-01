@@ -51,7 +51,7 @@ echo -e "${INFO}neovim: install/build neovim"
 pushd $HOME/temp
 wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.tar.gz
 tar -xvzf nvim-linux64.tar.gz
-sudo ln -s $HOME/temp/nvim-linux64 /usr/bin/nvim
+sudo ln -s $HOME/temp/nvim-linux64/bin/nvim /usr/bin/nvim
 popd
 
 echo -e "${INFO}neovim: symlink config files"
