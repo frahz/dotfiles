@@ -18,7 +18,7 @@ nvm install node
 
 # install rust tools
 echo -e "${INFO}download: rust tools"
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 echo -e "${INFO}env: enable cargo"
 source "$HOME/.cargo/env"
@@ -26,6 +26,7 @@ cargo install ripgrep bat fd-find git-delta tokei
 
 # install language servers
 echo -e "${INFO}download: language servers"
+mkdir -p $HOME/.local/bin
 
 npm i -g pyright bash-language-server
 
