@@ -39,7 +39,7 @@ pushd $HOME/temp
 
 echo -e "${INFO}download: sumneko-lua"
 wget https://github.com/sumneko/lua-language-server/releases/download/3.6.3/lua-language-server-3.6.3-linux-x64.tar.gz
-tar -xz lua-language-server-3.6.3-linux-x64.tar.gz -C lua-language-server
+tar -xvzf lua-language-server-3.6.3-linux-x64.tar.gz -C lua-language-server
 rm lua-language-server-3.6.3-linux-x64.tar.gz
 ln -s $HOME/temp/lua-language-server/bin/lua-language-server $HOME/.local/bin
 
