@@ -20,6 +20,8 @@ nvm install node
 echo -e "${INFO}download: rust tools"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+echo -e "${INFO}env: enable cargo"
+source "$HOME/.cargo/env"
 cargo install ripgrep bat fd-find git-delta tokei
 
 # install language servers
