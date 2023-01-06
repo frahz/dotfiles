@@ -6,8 +6,9 @@ Current dotfiles include:
 - neovim
 - zsh
 - tmux
+- kitty
 - gitconfig
 
 ## TODO
 
-Add git stuff to the install scripts
+- Add git/kitty stuff to the install scripts
