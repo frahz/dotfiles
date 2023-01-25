@@ -70,7 +70,7 @@ dashboard.section.buttons.opts.hl = "String"
 local function footer()
     local plugins = ""
     if vim.fn.has("linux") == 1 or vim.fn.has("mac") == 1 then
-        local handle = io.popen('fdfind -d 2 . $HOME"/.local/share/nvim/site/pack/packer" | grep pack | wc -l | tr -d "\n" ')
+        local handle = io.popen('fd -d 2 . $HOME/.local/share/nvim/site/pack/packer | grep pack | wc -l | tr -d "\n" ')
         if handle == nil then
             return nil
         end
