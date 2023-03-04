@@ -26,6 +26,9 @@ map("v", "<S-Down>", ":m '>+1<CR>gv=gv")
 -- paste over something but still keep the same thing in the paste buffer
 map("x", "<Leader>p", "\"_dP")
 
+-- disable hlsearch
+map("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
+
 -- allows paste outside vim
 map("n", "<Leader>y", "\"+y")
 map("v", "<Leader>y", "\"+y")

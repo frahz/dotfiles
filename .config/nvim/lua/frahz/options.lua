@@ -15,7 +15,7 @@ opt.expandtab = true
 opt.ignorecase = true
 opt.smartcase = true
 opt.incsearch = true
-opt.hlsearch = false
+opt.hlsearch = true
 
 -- [[ misc ]]
 opt.swapfile = false
