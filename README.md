@@ -12,3 +12,4 @@ Current dotfiles include:
 ## TODO
 
 - Add git/kitty stuff to the install scripts
+- Add mutt stuff to the install scripts
