@@ -1,5 +1,4 @@
 
-alias fd="fdfind"
 alias vim="nvim"
 alias nmt="neomutt"
 
