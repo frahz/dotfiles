@@ -28,6 +28,7 @@ catppuccin.setup({
                 information = {},
             },
         },
+        mason = true,
     },
     custom_highlights = function()
         return {

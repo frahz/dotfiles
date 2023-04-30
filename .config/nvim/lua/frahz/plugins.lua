@@ -82,12 +82,20 @@ return packer.startup(function(use)
             require("indent_blankline").setup({
                 char = "▏",
                 space_char_blankline = " ",
-                filetype_exclude = { "alpha", "help", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
-                buftype_exclude = { "terminal" },
+                filetype_exclude = { "alpha", "help", "mason", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
+                buftype_exclude = { "terminal" , "nofile" },
                 show_first_indent_level = false,
             })
         end,
     })
+
+    -- LSP Servers manager
+    use({
+        "williamboman/mason.nvim",
+        run = ":MasonUpdate"
+    })
+    use("williamboman/mason-lspconfig.nvim")
+
     -- Detect indentation style
     use({
         "nmac427/guess-indent.nvim",
@@ -95,6 +103,7 @@ return packer.startup(function(use)
             require("guess-indent").setup({})
         end,
     })
+
     -- Statusline stuff
     use("kyazdani42/nvim-web-devicons")
     use({

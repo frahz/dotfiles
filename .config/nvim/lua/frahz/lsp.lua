@@ -1,6 +1,10 @@
 
 local nvim_lsp = require("lspconfig")
+local mason_lspconfig = require("mason-lspconfig")
 require("frahz.lsp_handlers").setup()
+mason_lspconfig.setup({
+    ensure_installed = {"clangd", "rust_analyzer", "bashls", "lua_ls", "pyright" },
+})
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
@@ -24,7 +28,7 @@ local on_attach = function(client)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
