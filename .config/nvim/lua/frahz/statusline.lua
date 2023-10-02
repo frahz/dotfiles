@@ -5,6 +5,10 @@ if vim.fn.has("mac") == 1 then
     section_separators = { left = "", right = ""}
 end
 
+local function shiftwidth()
+    return " "..vim.api.nvim_get_option_value("shiftwidth", {})
+end
+
 lualine.setup({
     options = {
         icons_enabled = true,
@@ -19,7 +23,7 @@ lualine.setup({
         lualine_a = {"mode"},
         lualine_b = {"branch", "diff", "diagnostics"},
         lualine_c = {"progress", "location"},
-        lualine_x = {},
+        lualine_x = {shiftwidth},
         lualine_y = {"filetype"},
         lualine_z = {"filename"}
     },
