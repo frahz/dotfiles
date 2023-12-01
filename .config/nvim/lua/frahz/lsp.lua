@@ -99,3 +99,10 @@ nvim_lsp.pyright.setup({
     on_attach = on_attach,
 })
 
+nvim_lsp.tsserver.setup({
+    on_attach = on_attach,
+})
+
+nvim_lsp.nil_ls.setup({
+    on_attach = on_attach,
+})

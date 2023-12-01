@@ -8,7 +8,14 @@ configs.setup({
         "cpp",
         "c",
         "bash",
-        "java"
+        "java",
+        "css",
+        "html",
+        "typescript",
+        "javascript",
+        "toml",
+        "yaml",
+        "nix"
     },
     highlight = {
         enable = true,
