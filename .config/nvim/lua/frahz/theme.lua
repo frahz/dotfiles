@@ -20,6 +20,7 @@ catppuccin.setup({
     integrations = {
         treesitter = true,
         cmp = true,
+        gitsigns = true,
         native_lsp = {
             enabled = true,
             virtual_text = {
