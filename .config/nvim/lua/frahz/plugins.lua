@@ -79,13 +79,14 @@ return packer.startup(function(use)
     use({
         "lukas-reineke/indent-blankline.nvim",
         config = function ()
-            require("indent_blankline").setup({
-                char = "▏",
-                space_char_blankline = " ",
-                filetype_exclude = { "alpha", "help", "mason", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults" },
-                buftype_exclude = { "terminal" , "nofile" },
-                show_first_indent_level = false,
-            })
+          require("ibl").setup({
+              indent = { char = "▏" },
+              exclude = {
+                filetypes = {
+                  "alpha", "help", "terminal", "packer", "lspinfo", "TelescopePrompt", "TelescopeResults"
+                },
+              },
+          })
         end,
     })
 
