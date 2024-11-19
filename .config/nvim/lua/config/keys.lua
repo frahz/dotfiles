@@ -33,15 +33,3 @@ map("n", "<Esc><Esc>", "<cmd>nohlsearch<CR>")
 map("n", "<Leader>y", "\"+y")
 map("v", "<Leader>y", "\"+y")
 map("n", "<Leader>Y", "\"+Y")
-
--- Telescope
-map("n", "<Leader>ff", "<cmd>Telescope find_files<CR>")
-map("n", "<Leader>fg", "<cmd>Telescope git_files<CR>")
-map("n", "<Leader>fw", "<cmd>Telescope live_grep<CR>")
-map("n", "<Leader>fh", "<cmd>Telescope buffers<CR>")
-map("n", "<Leader>fs", "<cmd>Telescope grep_string<CR>")
-map("n", "<Leader>fo", "<cmd>Telescope oldfiles<CR>")
-map("n", "<Leader>fc", "<cmd>Telescope git_commits<CR>")
-map("n", "<Leader>fd", "<cmd>Telescope diagnostics<CR>")
-map("n", "<Leader>k", "<cmd>Telescope keymaps<CR>")
-
